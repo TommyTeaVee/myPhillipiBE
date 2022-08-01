@@ -87,7 +87,7 @@ db.mongoose
   require('./app/routes/auth.routes')(app);
   require('./app/routes/user.routes')(app);
 
-  app.get('/ok', (req, res) => {
+  app.get('/', (req, res) => {
     res.status(200).send("Moderator Content.");
   })
 
