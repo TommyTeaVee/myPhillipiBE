@@ -2,12 +2,21 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 
-
+/* 
 let corsOptions = {
-    origin: "https://62e7bd8a15b1303e6d8932d4--snazzy-croquembouche-73071b.netlify.app/home"
+    origin: "https://62e7bd8a15b1303e6d8932d4--snazzy-croquembouche-73071b.netlify.app*"
 }
 
 app.use(cors(corsOptions))
+ */
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 
 app.set('port', process.env.PORT || 3200)  
