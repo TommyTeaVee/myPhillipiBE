@@ -87,6 +87,9 @@ db.mongoose
   require('./app/routes/auth.routes')(app);
   require('./app/routes/user.routes')(app);
 
+  app.get('/ok', (req, res) => {
+    res.status(200).send("Moderator Content.");
+  })
 
 app.listen(app.get('port'), () => {
     console.info(`Server listen on port ${app.get('port')}`);
