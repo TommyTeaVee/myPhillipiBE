@@ -10,18 +10,10 @@ let corsOptions = {
 app.use(cors(corsOptions))
  */
 app.use(cors({
-  origin: '*',
+  origin: ['http://localhost:4200', 'https://62e7cfb5f9d40244e902634b--snazzy-croquembouche-73071b.netlify.app'],
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Origin: *');
-res.header('Access-Control-Allow-Methods: GET, POST, DELETE, PUT, PATCH, OPTIONS');
-res.header("Access-Control-Allow-Headers: X-Requested-With");
-  
-  
-  next();
-});
+
 
 
 app.set('port', process.env.PORT || 3200)  
